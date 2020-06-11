@@ -82,7 +82,6 @@ class SendgridApiTransportTest extends TestCase
                             ]],
                             'subject' => null,
                             'bcc' => [['email' => 'baz@example.com']],
-                            'reply_to' => [['email' => 'reply@example.com']],
                         ],
                     ],
                     'from' => [
@@ -92,6 +91,7 @@ class SendgridApiTransportTest extends TestCase
                     'content' => [
                         ['type' => 'text/plain', 'value' => 'content'],
                     ],
+                    'reply_to' => ['email' => 'reply@example.com'],
                 ],
                 'auth_bearer' => 'foo',
             ])
