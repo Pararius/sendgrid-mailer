@@ -53,6 +53,7 @@ class SendgridApiTransportTest extends TestCase
         $email->from(new Address('foo@example.com', 'Ms. Foo Bar'))
             ->to(new Address('bar@example.com', 'Mr. Recipient'))
             ->bcc('baz@example.com')
+            ->replyTo('reply@example.com')
             ->text('content');
 
         $response = $this->createMock(ResponseInterface::class);
@@ -81,6 +82,7 @@ class SendgridApiTransportTest extends TestCase
                             ]],
                             'subject' => null,
                             'bcc' => [['email' => 'baz@example.com']],
+                            'reply_to' => [['email' => 'reply@example.com']]
                         ],
                     ],
                     'from' => [
